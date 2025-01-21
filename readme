@@ -1,0 +1,46 @@
+# Spotify Voice Assistant 🎵🎤
+
+Este projeto é um assistente de voz que utiliza a API do Spotify para permitir o controle de reprodução de músicas através de comandos de voz. Com ele, você pode buscar e tocar músicas no Spotify apenas falando o nome da música e, opcionalmente, o artista.
+
+## 🎯 Funcionalidades
+
+- Reconhecimento de voz em português para comandos simples.
+- Busca e reprodução de músicas no Spotify.
+- Detecção automática de dispositivos ativos no Spotify.
+
+## 🛠️ Tecnologias Utilizadas
+
+- **[Spotipy](https://spotipy.readthedocs.io/)**: Biblioteca Python para interagir com a API do Spotify.
+- **[SpeechRecognition](https://pypi.org/project/SpeechRecognition/)**: Biblioteca para reconhecimento de voz.
+- **Microfone**: Para capturar comandos de voz.
+
+## ⚙️ Pré-requisitos
+
+1. **Python 3.8 ou superior** instalado.
+2. Conta no Spotify com um dispositivo configurado.
+3. Criação de um aplicativo na [Dashboard de Desenvolvedores do Spotify](https://developer.spotify.com/dashboard/applications) para obter suas credenciais (`client_id` e `client_secret`).
+
+## 🚀 Configuração e Execução
+
+Siga os passos abaixo para configurar e executar o projeto:
+
+### 1. Clone o repositório
+```bash
+git clone https://github.com/seu-usuario/spotify-voice-assistant.git
+cd spotify-voice-assistant
+
+### 2. Instale as dependências
+```bash
+pip install spotipy SpeechRecognition
+
+### 3. Configure as credenciais
+```bash
+client_id = 'SEU_CLIENT_ID'
+client_secret = 'SEU_CLIENT_SECRET'
+redirect_uri = 'http://localhost:8000/callback'
+
+### 4. Execute o programa
+Agora você está pronto para rodar o projeto. Use o comando abaixo para iniciar o assistente de voz:
+
+```bash
+python main.py

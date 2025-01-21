@@ -2,8 +2,8 @@ from spotipy.oauth2 import SpotifyOAuth
 import spotipy
 import speech_recognition as sr
 
-client_id = '6bef68b73e584fbb9c5132a48cba430d'
-client_secret = 'ce6396dabb884ce793c248909cd9ae93'
+client_id = 'SEU_CLIENT_ID'
+client_secret = 'SEU_CLIENT_SECRET'
 redirect_uri = 'http://localhost:8000/callback'
 scope = 'user-modify-playback-state user-read-playback-state'
 
@@ -15,11 +15,9 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id,
 listener = sr.Recognizer()
 
 def beep():
-    """Emite um som simples para feedback."""
     print("\a")
 
 def listen():
-    """Escuta o comando do usuário e retorna o texto reconhecido."""
     rec = ""
     try:
         with sr.Microphone() as source:
@@ -31,7 +29,6 @@ def listen():
     return rec
 
 def verificar_dispositivo_ativo():
-    """Verifica se há dispositivos ativos e retorna o ID do dispositivo."""
     try:
         devices = sp.devices()
         active_devices = [device for device in devices['devices'] if device['is_active']]
@@ -48,7 +45,6 @@ def verificar_dispositivo_ativo():
         return None
 
 def tocar_musica(song, artist=None):
-    """Busca e toca uma música no Spotify."""
     try:
         device_id = verificar_dispositivo_ativo()
         if not device_id:
